@@ -1,9 +1,7 @@
 :root {
-    --background :rgba(48, 170, 252, 0.849);
-    --board-background:rgba(142, 37, 240, 0.911);
-    --text : rgba(63, 62, 65, 0.945);
-    --text1 : rgb(241, 238, 238);
-    --border : rgba(144, 21, 245, 0.932);
+    --background :rgb(255, 249, 249);
+    --text : rgba(0, 0, 0, 0.945);
+    --border : rgb(146, 138, 138);
 }
 
 * {

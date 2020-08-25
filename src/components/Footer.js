@@ -6,6 +6,7 @@ const footer = {
     display : 'flex',
     alignItems : 'center',
     justifyContent : 'center',
+    background : 'rgb(235, 231, 227)',
     color : 'rgb(94, 86, 86)'
 }
 

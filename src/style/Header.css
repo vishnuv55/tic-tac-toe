@@ -1,19 +1,25 @@
 :root {
-    --head-background :rgb(10, 38, 92);
-    --head-text : rgb(230, 230, 230);
+    --head-background :green;
+    --head-text : rgb(241, 238, 238);
 }
 
 .header{
-    width: 98%;
-    margin: 15px 0;
+    width: 95%;
+    padding: 12px;
+    margin-top: 20px;
     border-radius: 35px;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--board-background);
-    color: var(--text1);
+    background: var(--head-background);
+    color: var(--head-text);
 }
 .header h1 {
     text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        margin-top: 15px;
+    }
 }

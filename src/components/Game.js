@@ -53,13 +53,13 @@ const Game = () => {
                 onClick= {handleClick}
             />
             <div class = "btns">
-                <button onClick = {backHandleClick} >Back</button>
-                <button onClick = {resetHandleClick} >Reset</button>
+                <button className="back" onClick = {backHandleClick} >Back</button>
+                <button className="reset" onClick = {resetHandleClick} >{winner | stepNo === 9 ? 'Next Game' : 'reset'}</button>
             </div>
         </div>
     )
 }
-
+    
 export function findWinner(squares) {
     const winLines = [
         [0, 1, 2],
