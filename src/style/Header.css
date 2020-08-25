@@ -1,0 +1,19 @@
+:root {
+    --head-background :rgb(10, 38, 92);
+    --head-text : rgb(230, 230, 230);
+}
+
+.header{
+    width: 98%;
+    margin: 15px 0;
+    border-radius: 35px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--board-background);
+    color: var(--text1);
+}
+.header h1 {
+    text-align: center;
+}

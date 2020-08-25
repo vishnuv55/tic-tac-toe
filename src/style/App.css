@@ -1,0 +1,24 @@
+:root {
+    --background :rgba(48, 170, 252, 0.849);
+    --board-background:rgba(142, 37, 240, 0.911);
+    --text : rgba(63, 62, 65, 0.945);
+    --text1 : rgb(241, 238, 238);
+    --border : rgba(144, 21, 245, 0.932);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--background);
+}

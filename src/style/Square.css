@@ -1,0 +1,15 @@
+.square {
+    width: 70px;
+    height: 70px;
+    margin: 2px;
+    border: 2px solid var(--border);
+    background: var(--board-background);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text1);
+}
+.square:hover,
+.square:focus {
+    border: 2px solid var(--border);
+    outline: none;
+}
