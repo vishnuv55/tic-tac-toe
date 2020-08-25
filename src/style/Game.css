@@ -25,7 +25,7 @@
 .reset,
 .back {
     width: 130px;
-    background: var(--board-background);
+    background: rgb(179, 174, 174);
     border: none;
     border-radius: 3px;
     padding: 10px;
