@@ -12,8 +12,7 @@ const Game = () => {
     const [xWin , setXwin] =useState(0)
     const [tie , setTie] =useState(0)
     const [oWin , setOwin] =useState(0)
-    let winner = findWinner(history[stepNo])
-    const details = winner ? 'Winner Is ' + winner : (stepNo === 9 ? 'Oops...Its a Draw' : "") 
+    let winner = findWinner(history[stepNo]) 
     
     const handleClick = (i) => {
         const timeInHistory = history.slice(0, stepNo + 1)
@@ -72,7 +71,7 @@ const Game = () => {
         if(stepNo === 9 && winner === null) {
             setTie(prevTie => prevTie - 1)
         }
-        if(stepNo != 0) {
+        if(stepNo !== 0) {
             setStepNo(prevStepNo => prevStepNo - 1)
         }
     }
@@ -87,7 +86,7 @@ const Game = () => {
         if( !winner && stepNo === 9){
             setTie(prevTie => prevTie + 1)
         }
-    }, [stepNo])
+    }, [stepNo , winner])
 
     return (
         <div className="container">
