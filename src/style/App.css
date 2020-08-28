@@ -1,5 +1,5 @@
 :root {
-    --background :rgb(255, 249, 249);
+    --background :rgb(243, 234, 234);
     --text : rgba(0, 0, 0, 0.945);
     --border : rgb(146, 138, 138);
 }
@@ -13,10 +13,11 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 .app {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     background: var(--background);
+    background-image: url('../image/pattern.jpeg');
+    background-repeat: repeat;
 }

@@ -1,15 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState , useEffect} from 'react';
 import Board from './Board'
+import RightSection from './RightSection'
+import Stat from './Stat'
 import '../style/Game.css'
 
 const Game = () => {
 
     const [history , setHistory] = useState([Array(9).fill(null)])
-    const [xTurn , setXturn] = useState(true)
+    const [turn , setTurn] = useState('X')
     const [stepNo , setStepNo] = useState(0)
+    const [xWin , setXwin] =useState(0)
+    const [tie , setTie] =useState(0)
+    const [oWin , setOwin] =useState(0)
     let winner = findWinner(history[stepNo])
-    const player = (xTurn ? 'X' : 'O')
-    const details = winner ? 'Winner Is ' + winner : (stepNo === 9 ? 'Oops...Its a Draw' : 'Current Player : ' + player) 
+    const details = winner ? 'Winner Is ' + winner : (stepNo === 9 ? 'Oops...Its a Draw' : "") 
     
     const handleClick = (i) => {
         const timeInHistory = history.slice(0, stepNo + 1)
@@ -18,12 +22,13 @@ const Game = () => {
 
         if(squares[i] || winner){
             return
-            
         }
-        squares[i] = xTurn ? 'X' : 'O'
+        squares[i] = turn
         setHistory([...timeInHistory, squares])
         setStepNo(timeInHistory.length)
-        setXturn(!xTurn)
+        setTurn((prevTurn)=>(
+            prevTurn ==='X' ? 'O' : 'X' 
+        ))
     }
     
     const backHandleClick = () => {
@@ -31,31 +36,73 @@ const Game = () => {
             resetHandleClick()
         }
         else{
+            if(stepNo === 9 && winner === null) {
+                setTie(prevTie => prevTie - 1)
+            }
             setStepNo((prevStepNo)=>(
                 prevStepNo-1
             ))
-            setXturn(!xTurn)
-            winner='null'
+            setTurn((prevTurn)=>(
+                prevTurn ==='X' ? 'O' : 'X' 
+            ))
+            if(winner === 'X') {
+                setXwin(prevXwin => prevXwin-1)
+            }
+            if(winner === 'O') {
+                setOwin(prevOwin => prevOwin -1)
+            }
+            winner = null
         }
     }
-
+ 
     const resetHandleClick = () => {
         setHistory([Array(9).fill(null)])
-        setXturn(true)
+        setTurn('X')
         setStepNo(0)
     }
 
+    const onFormChange = (event) => {
+        setTurn(event.target.value)
+        if(winner === 'X') {
+            setXwin(prevXwin => prevXwin-1)
+        }
+        if(winner === 'O') {
+            setOwin(prevOwin => prevOwin -1)
+        }
+        if(stepNo === 9 && winner === null) {
+            setTie(prevTie => prevTie - 1)
+        }
+        if(stepNo != 0) {
+            setStepNo(prevStepNo => prevStepNo - 1)
+        }
+    }
+
+    useEffect(() => {
+        if(winner === 'X'){
+            setXwin(prevXwin => prevXwin + 1)
+        }
+        if(winner === 'O'){
+            setOwin(prevOwin => prevOwin + 1)
+        }
+        if( !winner && stepNo === 9){
+            setTie(prevTie => prevTie + 1)
+        }
+    }, [stepNo])
+
     return (
         <div className="container">
-            <h2 className="show-win" >{details}</h2>
+            <Stat xWin={xWin} tie={tie} oWin={oWin}/>
             <Board 
                 squares = {history[stepNo]} 
                 onClick= {handleClick}
             />
-            <div class = "btns">
-                <button className="back" onClick = {backHandleClick} >Back</button>
-                <button className="reset" onClick = {resetHandleClick} >{winner | stepNo === 9 ? 'Next Game' : 'reset'}</button>
-            </div>
+            <RightSection 
+                value ={turn} 
+                onChange = {onFormChange}
+                backHandleClick = {backHandleClick}
+                resetHandleClick = {resetHandleClick}
+                winner = {winner!=null | stepNo === 9 ? 'Next Game' : 'reset'}
+            />
         </div>
     )
 }

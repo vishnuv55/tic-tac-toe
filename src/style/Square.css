@@ -2,7 +2,7 @@
     width: 90px;
     height: 90px;
     border: none;
-    background: var(--background);
+    background: transparent;
     font-size: 55px;
     font-weight: 800;
 }
@@ -11,3 +11,9 @@
     border: none;
     outline: none;
 }
+/* @media screen and (max-width: 800px) {
+    .square{
+        width: 80px;
+        height: 80px;
+    }
+  } */

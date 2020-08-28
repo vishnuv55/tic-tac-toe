@@ -1,9 +1,9 @@
 .board {
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 3vw;
 }
 .board-row{
     display: flex;
@@ -16,8 +16,16 @@
     background: var(--border);
 }
 .h-line{
-    width: 270px;
+    width: 290px;
     height: 10px;
     background: var(--border);
     border-radius: 5px;
 }
+/* @media screen and (max-width: 800px) {
+    .line{
+        height: 80px;
+    }
+    .h-line{
+        width: 260px;
+    }
+  } */
