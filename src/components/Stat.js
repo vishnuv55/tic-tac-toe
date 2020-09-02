@@ -6,7 +6,7 @@ const Stat = (props) => {
         <div className = "left-container">
             <div className="win-stat">
                 <div className="stat">
-                    <div>Payer X</div>
+                    <div>Player X</div>
                     <div>{props.xWin}</div>
                 </div>
                 <div className="stat">
