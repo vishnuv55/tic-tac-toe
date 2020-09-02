@@ -1,23 +1,23 @@
 <div align='center'>
     <h1>TIC TAC TOE</h1>
     A multiplayer game build using react
-</div>
+</div><br/>
 
-## About
+# About
 
 This is a 2-player game where each player marks 'X' or 'O' in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. 
 
 ### Desktop view
 
-![image](https://raw.githubusercontent.com/vishnuv55/tic-tac-toe/master/src/image/demo-img-1.png)
+![Desktop view](https://raw.githubusercontent.com/vishnuv55/tic-tac-toe/master/src/image/demo-img-1.png)
 
 ### Phone view
 
-![image](https://raw.githubusercontent.com/vishnuv55/tic-tac-toe/master/src/image/demo-img-2.jpeg)
+<img src="https://raw.githubusercontent.com/vishnuv55/tic-tac-toe/master/src/image/demo-img-2.jpeg" alt="mobile-view" width="250"/>
 
+<br/><br/>
 
-## Features
-
+# Features
 
 The few features provided in this game are 
     
@@ -25,31 +25,40 @@ The few features provided in this game are
 * Player can goto the previous step if an Accident occurs in the game  
 * Player can view their win stats
 
-## Run
+<br/><br/>
+
+# Run
 
 To run the code on your computer,
 
-### Requirements
+## Requirements
 
 * git
 * node js
 
-### Steps
+## Steps
 
 1. Clone the repo 
 
-`git clone git@github.com:vishnuv55/tic-tac-toe.git `
+```
+git clone git@github.com:vishnuv55/tic-tac-toe.git 
+```
 
 2. Install Dependancies
 
-`cd tic-tac-toe`
+```
+cd tic-tac-toe
 
-`npm install `
-
+npm install 
+```
 3. Run game in local server 
 
-`npm start`
+```
+npm start
+```
 
-4. Build 
+4. To create Build 
 
-`npm build`
+```
+npm build
+```
