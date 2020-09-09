@@ -14,6 +14,7 @@ const Game = () => {
     const [oWin , setOwin] =useState(0)
     let winner = findWinner(history[stepNo]) 
     
+    // function for all element click on board
     const handleClick = (i) => {
         const timeInHistory = history.slice(0, stepNo + 1)
         const currentSquare = timeInHistory[stepNo]
@@ -29,7 +30,8 @@ const Game = () => {
             prevTurn ==='X' ? 'O' : 'X' 
         ))
     }
-    
+
+    //handles the code for back button
     const backHandleClick = () => {
         if(stepNo===0){
             resetHandleClick()
@@ -53,13 +55,15 @@ const Game = () => {
             winner = null
         }
     }
- 
+
+    //Reset the game
     const resetHandleClick = () => {
         setHistory([Array(9).fill(null)])
         setTurn('X')
         setStepNo(0)
     }
 
+    //sets user stats
     const onFormChange = (event) => {
         setTurn(event.target.value)
         if(winner === 'X') {
@@ -75,7 +79,7 @@ const Game = () => {
             setStepNo(prevStepNo => prevStepNo - 1)
         }
     }
-
+    //update stat on each step
     useEffect(() => {
         if(winner === 'X'){
             setXwin(prevXwin => prevXwin + 1)
@@ -105,8 +109,9 @@ const Game = () => {
         </div>
     )
 }
-    
-export function findWinner(squares) {
+
+//function to calculate winner
+function findWinner(squares) {
     const winLines = [
         [0, 1, 2],
         [3, 4, 5],
